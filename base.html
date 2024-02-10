@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme:{
+                extend : {
+                    fontFamily:{
+                        'poppins': ['Poppins']
+                    },
+
+                },
+            },
+
+        }
+    </script>
+</head>
+<body class="bg-gray-200 font-poppins">
+
+    <main>
+    
+    
+    
+        <!-- Navbar Start -->
+        <nav class="container mx-auto bg-white p-4 sm:p-2 sm:px-2">
+            
+            <div class="sm:flex  sm:justify-around sm:gap-4 ">  
+                
+                <!-- search bar start -->
+                <form  class="relative sm:flex sm:items-center  max-w-sm s" action="">
+                    <ion-icon class="absolute text-3xl fill-[#98c1d9]" name="search"></ion-icon>
+                    <input class="py-1  flex items-center w-full pl-8 outline-none ring-2 ring-[#98c1d9] rounded-md font-semibold text-gray-700 " placeholder="Search..." type="text" name="" id="">
+                </form>
+                <!-- search bar end -->
+
+                
+
+                <!-- kategori container start -->
+                <div class="max-w-sm sm:max-w-lg  relative mt-5 sm:mt-0">
+
+                
+                    <div onclick="toggleDropdown()"  class="sm:hidden cursor-pointer p-2 rounded-md shadow-md text-slate-500 flex justify-between">
+                        <h6 class="font-semibold ">Kategori</h6>
+                        <ion-icon class="text-2xl " name="chevron-down"></ion-icon>
+                    </div>
+
+
+                        <ul id="toggleCategory" class=" hidden sm:flex  sm:static sm:shadow-none sm:rounded-none  bg-white left-0 w-full absolute p-3 sm:p-0  sm:mt-0 rounded-md mt-2 shadow-md">
+                            <li class="hover:bg-gray-200 sm:w-24 sm:hover:ring-2 hover:ring-sky-400 cursor-pointer hover:rounded-md flex  sm:flex-col items-center  sm:ml-2 p-2">
+                                <ion-icon class="text-xl fill-sky-600" name="fast-food"></ion-icon>
+                                <a class="text-lg text-[#293241] font-semibold ml-4 sm:ml-1 "href="#">Makanan</a>
+                            </li>
+                            <li class="hover:bg-gray-200 sm:w-24 sm:hover:ring-2 hover:ring-sky-400 cursor-pointer hover:rounded-md flex sm:flex-col items-center  sm:ml-2 p-2">
+                                <ion-icon class="text-xl fill-sky-600" name="beer"></ion-icon>
+                                <a class="text-lg text-[#293241]  font-semibold ml-4 sm:ml-1 " href="#">Minuman</a>
+                            </li>
+                            <li class="hover:bg-gray-200 sm:w-24 sm:hover:ring-2 hover:ring-sky-400 cursor-pointer hover:rounded-md flex sm:flex-col items-center  sm:ml-2 p-2">
+                                <ion-icon class="text-xl fill-sky-600" name="cafe"></ion-icon>
+                                <a class="text-lg text-[#293241] font-semibold ml-4 sm:ml-1 " href="#">kopi</a>
+                            </li>
+                            <li class="hover:bg-gray-200 sm:w-24 sm:hover:ring-2 hover:ring-sky-400 cursor-pointer hover:rounded-md flex sm:flex-col items-center  sm:ml-2 p-2">
+                                <ion-icon class="text-xl fill-sky-600" name="pizza"></ion-icon>
+                                <a class="text-lg text-[#293241] font-semibold ml-4 sm:ml-1 " href="#">Snack</a>
+                            </li>
+
+                        </ul>
+                </div>
+                <!-- kategori container end -->
+
+
+
+
+            </div>
+
+
+
+        </nav>
+        
+        <!-- Navbar end -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const openModal  = document.querySelectorAll('.openModal')
+        const modalContainer = document.querySelector('#modalContainer')
+        const closeModal = document.querySelector('#closeModal')
+        openModal.forEach((button,index)=>{
+            button.addEventListener('click',function(){
+                modalContainer.classList.remove('hidden')
+            })
+        })
+        closeModal.addEventListener('click',function(){
+            modalContainer.classList.add('hidden')
+        })
+
+        function toggleDropdown(){
+            let dropdown = document.querySelector('#toggleCategory')
+            dropdown.classList.toggle('hidden')
+        }
+
+</script>
+    
+
+<!-- Trigger button -->
+
+</body>
+</html>
